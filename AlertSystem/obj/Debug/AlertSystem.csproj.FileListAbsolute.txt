@@ -1,0 +1,7 @@
+C:\Users\320069484\OneDrive - Philips\Workspace\CaseStudy\AlertSystem\bin\Debug\AlertSystem.exe.config
+C:\Users\320069484\OneDrive - Philips\Workspace\CaseStudy\AlertSystem\bin\Debug\AlertSystem.exe
+C:\Users\320069484\OneDrive - Philips\Workspace\CaseStudy\AlertSystem\bin\Debug\AlertSystem.pdb
+C:\Users\320069484\OneDrive - Philips\Workspace\CaseStudy\AlertSystem\obj\Debug\AlertSystem.csprojAssemblyReference.cache
+C:\Users\320069484\OneDrive - Philips\Workspace\CaseStudy\AlertSystem\obj\Debug\AlertSystem.csproj.CoreCompileInputs.cache
+C:\Users\320069484\OneDrive - Philips\Workspace\CaseStudy\AlertSystem\obj\Debug\AlertSystem.exe
+C:\Users\320069484\OneDrive - Philips\Workspace\CaseStudy\AlertSystem\obj\Debug\AlertSystem.pdb
