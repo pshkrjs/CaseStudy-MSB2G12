@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Timers;
 using MonitoringSystem;
 using PatientDataGenerator;
@@ -16,12 +17,14 @@ namespace Icu
             SetMonitoringSystemTimer();
             SetPatientDataGeneratorTimer();
 
-            Console.WriteLine("\nPress the Enter key to exit the application...\n");
+            Console.WriteLine("\nPatient Monitoring has started...\n");
             Console.ReadLine();
             _monitoringSystemTimer.Stop();
             _monitoringSystemTimer.Dispose();
+            _patientDataGeneratorTimer.Stop();
+            _patientDataGeneratorTimer.Dispose();
 
-            Console.WriteLine("Terminating the application...");
+            Console.WriteLine("Disconnecting Monitoring System");
         }
 
         private static void SetMonitoringSystemTimer()
@@ -45,7 +48,9 @@ namespace Icu
 
         private static void MonitoringSystemEvent(Object source, ElapsedEventArgs e)
         {
-            _monitoringSystem.Start();
+            var sourcePath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName, "Dataset.txt");
+            Console.WriteLine($"Patient Status at {e.SignalTime}");
+            _monitoringSystem.CheckStatus(sourcePath);
         }
         private static void PatientDataGeneratorEvent(Object source, ElapsedEventArgs e)
         {

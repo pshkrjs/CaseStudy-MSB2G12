@@ -5,7 +5,7 @@ namespace Patient
     [Serializable]
     public class Patient
     {
-        public string PatientId { get; }
+        public string PatientId { get; set; }
         public int Spo2 { get; set; }
         public int PulseRate { get; set; }
         public decimal Temperature { get; set; }

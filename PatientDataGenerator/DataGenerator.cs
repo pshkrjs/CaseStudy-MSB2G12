@@ -51,14 +51,14 @@ namespace PatientDataGenerator
             _patient.Spo2 = ChangeSpo2();
             _patient.PulseRate = ChangePulse();
             _patient.Temperature = ChangeTemperature();
-            var SourcePath = @"C:\Users\320067504\OneDrive\CaseStudy-MSB2G12\PatientDataGenerator\Dataset.txt";
-            var lineCount = File.ReadLines(SourcePath).Count();
+            var sourcePath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName, "Dataset.txt");
+            var lineCount = File.ReadLines(sourcePath).Count();
 
 
 
             if (lineCount < 15)
             {
-	            StreamWriter fileWrite1 = new StreamWriter(SourcePath,true);
+	            StreamWriter fileWrite1 = new StreamWriter(sourcePath,true);
 	            fileWrite1.WriteLine(JsonConvert.SerializeObject(_patient));
 				fileWrite1.Flush();
 				fileWrite1.Dispose();
@@ -66,9 +66,9 @@ namespace PatientDataGenerator
             else
 			{
 				List<string> logList = new List<string>();
-				var logFile = File.ReadAllLines(SourcePath).Skip(1);
+				var logFile = File.ReadAllLines(sourcePath).Skip(1);
 				foreach(var s in logFile) logList.Add(s);
-				StreamWriter fileWrite2 = new StreamWriter(SourcePath, false);
+				StreamWriter fileWrite2 = new StreamWriter(sourcePath, false);
 				foreach (var l in logList)
 				{
 					fileWrite2.WriteLine(l);

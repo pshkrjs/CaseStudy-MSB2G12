@@ -1,0 +1,15 @@
+{"PatientId":"QJBYX684","Spo2":86,"PulseRate":198,"Temperature":107.4}
+{"PatientId":"QJBYX684","Spo2":28,"PulseRate":66,"Temperature":95.9}
+{"PatientId":"QJBYX684","Spo2":71,"PulseRate":164,"Temperature":103.3}
+{"PatientId":"QJBYX684","Spo2":13,"PulseRate":31,"Temperature":91.7}
+{"PatientId":"QJBYX684","Spo2":56,"PulseRate":129,"Temperature":100.1}
+{"PatientId":"QJBYX684","Spo2":98,"PulseRate":227,"Temperature":109.5}
+{"PatientId":"QJBYX684","Spo2":41,"PulseRate":95,"Temperature":97.9}
+{"PatientId":"QJBYX684","Spo2":83,"PulseRate":193,"Temperature":106.4}
+{"PatientId":"QJBYX684","Spo2":26,"PulseRate":61,"Temperature":94.8}
+{"PatientId":"QJBYX684","Spo2":69,"PulseRate":158,"Temperature":103.2}
+{"PatientId":"QJBYX684","Spo2":11,"PulseRate":26,"Temperature":91.6}
+{"PatientId":"QJBYX684","Spo2":54,"PulseRate":124,"Temperature":100.0}
+{"PatientId":"QJBYX684","Spo2":96,"PulseRate":222,"Temperature":109.5}
+{"PatientId":"QJBYX684","Spo2":75,"PulseRate":172,"Temperature":104.6}
+{"PatientId":"QJBYX684","Spo2":17,"PulseRate":40,"Temperature":93.0}

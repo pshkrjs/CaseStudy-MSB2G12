@@ -5,9 +5,9 @@ namespace AlertSystem
 {
     public class AlertImpl : IAlert
     {
-        public void Alert(string patient_id)
+        public void Alert(string patientId)
         {
-            Console.Write($"Patient No. {patient_Id} has abnormal values !!!");
+            Console.WriteLine($"Patient No. {patientId} has abnormal values !!!");
         }
     }
 }
