@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AlertSystem")]
+[assembly: AssemblyTitle("MonitoringSystem")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AlertSystem")]
+[assembly: AssemblyProduct("MonitoringSystem")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c5607c27-66e4-4d87-a0df-9d1a2fedfc58")]
+[assembly: Guid("ffe19e83-d228-4577-83c6-8f241f686ccf")]
 
 // Version information for an assembly consists of the following four values:
 //
