@@ -48,6 +48,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonitoringSystem\MonitoringSystem.csproj">
+      <Project>{FFE19E83-D228-4577-83C6-8F241F686CCF}</Project>
+      <Name>MonitoringSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PatientDataGenerator\PatientDataGenerator.csproj">
+      <Project>{c8703461-cd4a-4ceb-b7c5-a19f829914d0}</Project>
+      <Name>PatientDataGenerator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
