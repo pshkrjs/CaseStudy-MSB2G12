@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace PatientDataGenerator
 {
-    public class Class1
-    {
-    }
+	interface IGeneratorInterface
+	{
+		int ChangePulse();
+		int ChangeSpo2();
+		decimal ChangeTemperature();
+
+	}
 }
