@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patient", "Patient\Patient.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientDataGenerator", "PatientDataGenerator\PatientDataGenerator.csproj", "{C8703461-CD4A-4CEB-B7C5-A19F829914D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{30B7F0AC-3ED2-4985-86E7-53322001AFE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C8703461-CD4A-4CEB-B7C5-A19F829914D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8703461-CD4A-4CEB-B7C5-A19F829914D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8703461-CD4A-4CEB-B7C5-A19F829914D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30B7F0AC-3ED2-4985-86E7-53322001AFE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B7F0AC-3ED2-4985-86E7-53322001AFE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B7F0AC-3ED2-4985-86E7-53322001AFE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B7F0AC-3ED2-4985-86E7-53322001AFE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

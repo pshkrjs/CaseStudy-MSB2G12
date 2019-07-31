@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MonitoringSystem
 {
-    interface IMonitor
+    public interface IMonitor
     {
-        void CheckStatus(string fileName);
-        void Alert(string patienId);
+        void CheckStatus();
+        void Alert(List<string> anomalyList);
     }
 }

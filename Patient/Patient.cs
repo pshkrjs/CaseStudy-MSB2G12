@@ -6,16 +6,20 @@ namespace Patient
     public class Patient
     {
         public string PatientId { get; set; }
+        public string PatientName { get; set; }
         public int Spo2 { get; set; }
         public int PulseRate { get; set; }
         public decimal Temperature { get; set; }
+        public long TimeStamp { get; set; }
 
-        public Patient(string pId, int spo2, int pulse, decimal temp)
+        public Patient(string pId, string pName)
         {
             PatientId = pId;
-            Spo2 = spo2;
-            PulseRate = pulse;
-            Temperature = temp;
+            PatientName = pName;
+            Spo2 = 96;
+            PulseRate = 72;
+            Temperature = 98.6m;
+            TimeStamp = (long) (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
         }
     }
 }

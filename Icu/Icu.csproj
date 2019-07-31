@@ -43,14 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation.cs" />
     <Compile Include="Icu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AlertSystem\AlertSystem.csproj">
+      <Project>{c5607c27-66e4-4d87-a0df-9d1a2fedfc58}</Project>
+      <Name>AlertSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MonitoringSystem\MonitoringSystem.csproj">
       <Project>{FFE19E83-D228-4577-83C6-8F241F686CCF}</Project>
       <Name>MonitoringSystem</Name>
@@ -58,6 +62,14 @@
     <ProjectReference Include="..\PatientDataGenerator\PatientDataGenerator.csproj">
       <Project>{c8703461-cd4a-4ceb-b7c5-a19f829914d0}</Project>
       <Name>PatientDataGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Patient\Patient.csproj">
+      <Project>{993a7906-6cf0-47ca-bc83-64231970e87d}</Project>
+      <Name>Patient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{30b7f0ac-3ed2-4985-86e7-53322001afe5}</Project>
+      <Name>Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -57,6 +57,10 @@
       <Project>{993a7906-6cf0-47ca-bc83-64231970e87d}</Project>
       <Name>Patient</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{30b7f0ac-3ed2-4985-86e7-53322001afe5}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
