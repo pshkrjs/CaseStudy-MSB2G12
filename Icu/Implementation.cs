@@ -17,7 +17,7 @@ namespace Icu
 
         public Implementation()
         {
-            var patientId = RandomString();
+            var patientId = PatientIdGenerator();
             var patientName = "Mr. XYZ";
             var sourcePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName, $"Dataset_{patientId}.txt");
             var patient = new Patient.Patient(patientId, patientName);
@@ -57,7 +57,7 @@ namespace Icu
             _dataGenerator.UpdateValues();
         }
 
-        private string RandomString()
+        private string PatientIdGenerator()
         {
 			_rand = new Random();
 	        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -72,9 +72,9 @@ namespace Icu
 	        var patID = new string(stringChars) + randInt.ToString();
 
 			using (File.Create(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
-				$"Dataset_{patID}.txt"))) { } 
+				$"Dataset_{patID}.txt"))) { }
+
 			return patID;
-			// return "ABCDE123";
         }
     }
 }
