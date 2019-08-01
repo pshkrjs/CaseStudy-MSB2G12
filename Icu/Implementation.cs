@@ -13,14 +13,13 @@ namespace Icu
         private Timer _monitoringTimer, _patientDataGeneratorTimer;
         private IMonitor _monitor;
         private IGeneratorInterface _dataGenerator;
-        private Random _rand;
+        private Random _rand = new Random();
 
         public Implementation()
         {
             var patientId = RandomString();
-            var patientName = "Mr. Bnil Nath";
+            var patientName = "Mr. XYZ";
             var sourcePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName, $"Dataset_{patientId}.txt");
-            _rand = new Random();
             var patient = new Patient.Patient(patientId, patientName);
             _dataGenerator = new DataGenerator(patient, sourcePath);
             _monitor = new Monitor(patient, sourcePath, new ConsoleAlert());
@@ -30,13 +29,14 @@ namespace Icu
         {
             Console.WriteLine(Constants.ExitMessage);
             Console.WriteLine(Constants.PatientDataGeneratorMessage);
-            _patientDataGeneratorTimer = new Timer(Constants.DataGeneratorInterval * 1000);
+            _patientDataGeneratorTimer = new Timer(Constants.DataGeneratorInterval * Constants.NO_OF_MILLIS_IN_A_SECOND);
             _patientDataGeneratorTimer.Elapsed += PatientDataGeneratorEvent;
             _patientDataGeneratorTimer.AutoReset = true;
             _patientDataGeneratorTimer.Enabled = true;
 
             Console.WriteLine(Constants.MonitoringMessage);
-            _monitoringTimer = new Timer(Constants.MonitoringInterval * 1000);
+            Console.WriteLine(Constants.Ranges, Constants.Spo2ValidMin, Constants.Spo2ValidMax, Constants.TemperatureValidMin, Constants.TemperatureValidMax, Constants.PulseRateMin, Constants.PulseRateMax);
+			_monitoringTimer = new Timer(Constants.MonitoringInterval * Constants.NO_OF_MILLIS_IN_A_SECOND);
             _monitoringTimer.Elapsed += MonitoringSystemEvent;
             _monitoringTimer.AutoReset = true;
             _monitoringTimer.Enabled = true;
@@ -59,17 +59,22 @@ namespace Icu
 
         private string RandomString()
         {
-            //const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            //var stringChars = new char[5];
+			_rand = new Random();
+	        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var stringChars = new char[5];
 
-            //for (var i = 0; i < stringChars.Length; i++)
-            //{
-            //    stringChars[i] = chars[_rand.Next(chars.Length)];
-            //}
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[_rand.Next(chars.Length)];
+            }
 
-            //var randInt = _rand.Next(100, 999);
-            //return new string(stringChars) + randInt.ToString();
-            return "ABCDE123";
+            var randInt = _rand.Next(100, 999);
+	        var patID = new string(stringChars) + randInt.ToString();
+
+			using (File.Create(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
+				$"Dataset_{patID}.txt"))) { } 
+			return patID;
+			// return "ABCDE123";
         }
     }
 }

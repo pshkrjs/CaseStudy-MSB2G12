@@ -8,10 +8,13 @@ namespace AlertSystem
     {
         public void Alert(Patient.Patient patient, List<string> anomalyList)
         {
-            Console.WriteLine(Constants.AlertPatientDetailFormat, patient.TimeStamp, patient.PatientId);
+	       
+            Console.WriteLine(Constants.AlertPatientDetailFormat, patient.TimeStamp, patient.PatientName);
+			
+
             foreach (var anomaly in anomalyList)
             {
-                Console.WriteLine(Constants.AlertPatientAnomalyFormat, typeof(Patient.Patient).GetProperty(anomaly).GetValue(patient), 2, 3);
+                Console.WriteLine(Constants.AlertPatientAnomalyFormat,anomaly, typeof(Patient.Patient).GetProperty(anomaly).GetValue(patient));
             }
         }
     }

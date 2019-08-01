@@ -2,11 +2,14 @@
 {
     public class Constants
     {
-        public const string ExitMessage = "Press any key to exit.";
+	    public const int NO_OF_MILLIS_IN_A_SECOND = 1000;
+
+		public const string ExitMessage = "Press any key to exit.";
         public const string MonitoringMessage = "Patient Monitoring has started...";
         public const string PatientDataGeneratorMessage = "Data Generation has started...";
+        public const string Ranges = "Normal Range\n Spo2 Range: {0} -{1} \n Temperature Range: {2}-{3} \n PulseRate Range: {4}-{5}";
         public const string AlertPatientDetailFormat = "At {0}:\n\tPatient {1} had following anomalies:";
-        public const string AlertPatientAnomalyFormat = "\t\tValue: {0}, acceptable range: {1} - {2}";
+        public const string AlertPatientAnomalyFormat = "\t\tAnomaly: {0} , Value: {1},";
         public const int MonitoringInterval = 10;
         public const int DataGeneratorInterval = 1;
         public const int NumberOfPatientLogEntries = 15;
