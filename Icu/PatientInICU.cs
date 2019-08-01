@@ -8,14 +8,14 @@ using Resources;
 
 namespace Icu
 {
-    class Implementation
+    class PatientInICU
     {
         private Timer _monitoringTimer, _patientDataGeneratorTimer;
         private IMonitor _monitor;
         private IGeneratorInterface _dataGenerator;
         private Random _rand = new Random();
 
-        public Implementation()
+        public PatientInICU()
         {
             var patientId = PatientIdGenerator();
             var patientName = "Mr. XYZ";
@@ -29,14 +29,14 @@ namespace Icu
         {
             Console.WriteLine(Constants.ExitMessage);
             Console.WriteLine(Constants.PatientDataGeneratorMessage);
-            _patientDataGeneratorTimer = new Timer(Constants.DataGeneratorInterval * Constants.NO_OF_MILLIS_IN_A_SECOND);
+            _patientDataGeneratorTimer = new Timer(Constants.DataGeneratorInterval * Constants.NoOfMillisInASecond);
             _patientDataGeneratorTimer.Elapsed += PatientDataGeneratorEvent;
             _patientDataGeneratorTimer.AutoReset = true;
             _patientDataGeneratorTimer.Enabled = true;
 
             Console.WriteLine(Constants.MonitoringMessage);
-            Console.WriteLine(Constants.Ranges, Constants.Spo2ValidMin, Constants.Spo2ValidMax, Constants.TemperatureValidMin, Constants.TemperatureValidMax, Constants.PulseRateMin, Constants.PulseRateMax);
-			_monitoringTimer = new Timer(Constants.MonitoringInterval * Constants.NO_OF_MILLIS_IN_A_SECOND);
+            Console.WriteLine(Constants.Ranges, Constants.Spo2ValidMin, Constants.Spo2ValidMax, Constants.TemperatureValidMin, Constants.TemperatureValidMax, Constants.PulseRateValidMin, Constants.PulseRateValidMax);
+			_monitoringTimer = new Timer(Constants.MonitoringInterval * Constants.NoOfMillisInASecond);
             _monitoringTimer.Elapsed += MonitoringSystemEvent;
             _monitoringTimer.AutoReset = true;
             _monitoringTimer.Enabled = true;

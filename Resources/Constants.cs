@@ -2,8 +2,7 @@
 {
     public class Constants
     {
-	    public const int NO_OF_MILLIS_IN_A_SECOND = 1000;
-
+	    public const int NoOfMillisInASecond = 1000;
 		public const string ExitMessage = "Press any key to exit.";
         public const string MonitoringMessage = "Patient Monitoring has started...";
         public const string PatientDataGeneratorMessage = "Data Generation has started...";

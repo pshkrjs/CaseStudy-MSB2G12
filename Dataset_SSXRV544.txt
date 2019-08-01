@@ -1,0 +1,15 @@
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":11,"PulseRate":3,"Temperature":101.7,"TimeStamp":1564668589976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":24,"PulseRate":219,"Temperature":93.6,"TimeStamp":1564668589976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":27,"PulseRate":222,"Temperature":96.3,"TimeStamp":1564668589976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":12,"PulseRate":66,"Temperature":109.4,"TimeStamp":1564668589976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":20,"PulseRate":157,"Temperature":96.8,"TimeStamp":1564668589976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":15,"PulseRate":207,"Temperature":106.8,"TimeStamp":1564668589976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":54,"PulseRate":39,"Temperature":90.8,"TimeStamp":1564668589976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":68,"PulseRate":98,"Temperature":97.5,"TimeStamp":1564668589976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":30,"PulseRate":138,"Temperature":91.5,"TimeStamp":1564668599976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":88,"PulseRate":14,"Temperature":101.1,"TimeStamp":1564668599976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":72,"PulseRate":102,"Temperature":102.6,"TimeStamp":1564668599976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":66,"PulseRate":73,"Temperature":89.2,"TimeStamp":1564668599976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":44,"PulseRate":216,"Temperature":100.7,"TimeStamp":1564668599976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":51,"PulseRate":196,"Temperature":99.2,"TimeStamp":1564668599976}
+{"PatientId":"SSXRV544","PatientName":"Mr. XYZ","Spo2":17,"PulseRate":171,"Temperature":92.1,"TimeStamp":1564668599976}

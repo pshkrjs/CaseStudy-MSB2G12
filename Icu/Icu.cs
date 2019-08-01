@@ -9,8 +9,8 @@ namespace Icu
     {
         public static void Main()
         {
-            var implementation = new Implementation();
-            implementation.StartMonitoring();
+            var patientInIcu = new PatientInICU();
+            patientInIcu.StartMonitoring();
         }
     }
 }
