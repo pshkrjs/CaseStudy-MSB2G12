@@ -44,10 +44,11 @@ namespace PatientDataGenerator
             }
             else
 			{
-                streamWriter = new StreamWriter(_sourcePath, false);
+               
                 List<string> logList = new List<string>();
 				var logFile = File.ReadAllLines(_sourcePath).Skip(1);
-				foreach(var entry in logFile) logList.Add(entry);
+				streamWriter = new StreamWriter(_sourcePath, false);
+				foreach (var entry in logFile) logList.Add(entry);
 				foreach (var logItem in logList)
 				{
 					streamWriter.WriteLine(logItem);

@@ -1,0 +1,15 @@
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":34,"PulseRate":107,"Temperature":89.2,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":88,"PulseRate":121,"Temperature":109.9,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":8,"PulseRate":218,"Temperature":108.1,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":8,"PulseRate":17,"Temperature":107.3,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":65,"PulseRate":185,"Temperature":92.0,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":99,"PulseRate":195,"Temperature":106.5,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":98,"PulseRate":177,"Temperature":99.3,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":30,"PulseRate":50,"Temperature":107.6,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":6,"PulseRate":5,"Temperature":105.4,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":92,"PulseRate":171,"Temperature":104.5,"TimeStamp":1564657484728}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":96,"PulseRate":151,"Temperature":103.2,"TimeStamp":1564657494729}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":55,"PulseRate":108,"Temperature":104.1,"TimeStamp":1564657494729}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":47,"PulseRate":87,"Temperature":95.2,"TimeStamp":1564657494729}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":19,"PulseRate":0,"Temperature":100.5,"TimeStamp":1564657494729}
+{"PatientId":"ABCDE123","PatientName":"Mr. Bnil Nath","Spo2":61,"PulseRate":106,"Temperature":92.1,"TimeStamp":1564657494729}
