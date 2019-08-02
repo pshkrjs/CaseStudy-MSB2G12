@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientDataGeneratorTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientTests", "PatientTests\PatientTests.csproj", "{C3E665F1-55C8-49F4-9BE9-D41AE1B1B804}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{D6347168-16FC-4BCA-87C8-B88490178373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAlertTests", "ConsoleAlertTests\ConsoleAlertTests.csproj", "{7C578176-4C95-4835-90D0-7015E7ED189F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{C3E665F1-55C8-49F4-9BE9-D41AE1B1B804}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3E665F1-55C8-49F4-9BE9-D41AE1B1B804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3E665F1-55C8-49F4-9BE9-D41AE1B1B804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6347168-16FC-4BCA-87C8-B88490178373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6347168-16FC-4BCA-87C8-B88490178373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6347168-16FC-4BCA-87C8-B88490178373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6347168-16FC-4BCA-87C8-B88490178373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C578176-4C95-4835-90D0-7015E7ED189F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C578176-4C95-4835-90D0-7015E7ED189F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C578176-4C95-4835-90D0-7015E7ED189F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C578176-4C95-4835-90D0-7015E7ED189F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

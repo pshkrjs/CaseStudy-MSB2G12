@@ -1,51 +1,48 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using PatientDataGenerator;
+using static Resources.Constants;
 
 namespace PatientTests
 {
     [TestClass]
     public class PatientTests
     {
-        private static string patientId = "ZXREA142";
-        private static string patientName = "Pushkaraj";
-        private static string sourcePath = "";
-        private static Patient.Patient patient;
-        private static DataGenerator dataGenerator;
+        private static Patient.Patient _patient;
+        private static DataGenerator _dataGenerator;
 
         [AssemblyInitialize]
         public static void TestInitialize(TestContext testContext)
         {
-            patient = new Patient.Patient(patientId, patientName);
-            dataGenerator = new DataGenerator(patient, sourcePath);
+            _patient = new Patient.Patient(demoPatientId, demoPatientName);
+            _dataGenerator = new DataGenerator(_patient, demosourcePath);
         }
 
         [TestMethod]
         public void SetPulseRateTest()
         {
-            var expectedPulseRate = dataGenerator.GeneratePulseRate();
-            patient.PulseRate = expectedPulseRate;
+            var expectedPulseRate = _dataGenerator.GeneratePulseRate();
+            _patient.PulseRate = expectedPulseRate;
 
-            var actualPulseRate = patient.PulseRate;
+            var actualPulseRate = _patient.PulseRate;
             AreEqual(expectedPulseRate, actualPulseRate);
         }
         [TestMethod]
         public void SetSpo2Test()
         {
-            var expectedSpo2 = dataGenerator.GenerateSpo2();
-            patient.Spo2 = expectedSpo2;
+            var expectedSpo2 = _dataGenerator.GenerateSpo2();
+            _patient.Spo2 = expectedSpo2;
 
-            var actualSpo2 = patient.Spo2;
+            var actualSpo2 = _patient.Spo2;
             AreEqual(expectedSpo2, actualSpo2);
         }
         [TestMethod]
         public void SetTemperatureTest()
         {
-            var expectedTemperature = dataGenerator.GenerateTemperature();
-            patient.Temperature = expectedTemperature;
+            var expectedTemperature = _dataGenerator.GenerateTemperature();
+            _patient.Temperature = expectedTemperature;
 
-            var actualTemperature = patient.Temperature;
+            var actualTemperature = _patient.Temperature;
             AreEqual(expectedTemperature, actualTemperature);
         }
     }

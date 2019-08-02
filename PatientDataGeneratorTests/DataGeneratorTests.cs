@@ -13,17 +13,14 @@ namespace PatientDataGeneratorTests
     [TestClass]
     public class DataGeneratorTests
     {
-        private static string patientId = "ZXREA142";
-        private static string patientName = "Pushkaraj";
-        private static string sourcePath = "";
-        private static Patient.Patient patient;
-        private static DataGenerator dataGenerator;
+        private static Patient.Patient _patient;
+        private static DataGenerator _dataGenerator;
 
         [AssemblyInitialize]
         public static void TestInitialize(TestContext testContext)
         {
-            patient = new Patient.Patient(patientId, patientName);
-            dataGenerator = new DataGenerator(patient, sourcePath);
+            _patient = new Patient.Patient(demoPatientId, demoPatientName);
+            _dataGenerator = new DataGenerator(_patient, demosourcePath);
         }
 
         private bool MinMaxBoundary(decimal value, decimal minValue, decimal maxValue)
@@ -36,21 +33,21 @@ namespace PatientDataGeneratorTests
         [TestMethod]
         public void GenerateTemperatureTest()
         {
-            var generatedTemperature = dataGenerator.GenerateTemperature();
+            var generatedTemperature = _dataGenerator.GenerateTemperature();
             IsTrue(MinMaxBoundary(generatedTemperature, TemperatureMin, TemperatureMax));
         }
 
         [TestMethod]
         public void GenerateSpo2Test()
         {
-            var generatedSpo2 = dataGenerator.GenerateSpo2();
+            var generatedSpo2 = _dataGenerator.GenerateSpo2();
             IsTrue(MinMaxBoundary(generatedSpo2, Spo2Min, Spo2Max));
         }
 
         [TestMethod]
         public void GeneratePulseRateTest()
         {
-            var generatedPulseRate = dataGenerator.GeneratePulseRate();
+            var generatedPulseRate = _dataGenerator.GeneratePulseRate();
             IsTrue(MinMaxBoundary(generatedPulseRate, PulseRateMin, PulseRateMax));
         }
     }
