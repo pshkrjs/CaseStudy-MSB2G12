@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using Resources;
-
+/*
+ * ConsoleAlert generates suitable Alerts corresponding to the anomalies found in the Patient
+ */
 namespace AlertSystem
 {
     public class ConsoleAlert : IAlert
     {
-        public void Alert(Patient.Patient patient, List<string> anomalyList)
+		/*
+		 * Alert method writes the Anomalies found in the particular patient
+		 * against the normal conditions
+		 */
+	    public void Alert(Patient.Patient patient, List<string> anomalyList)
         {
 	       
             Console.WriteLine(Constants.AlertPatientDetailFormat, patient.TimeStamp, patient.PatientName);

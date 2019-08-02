@@ -8,6 +8,12 @@ using Resources;
 
 namespace Icu
 {
+	/*
+	 * PatientInICU class tries to demonstrate a patient in ICU
+	 * for simplicity we have considered::
+	 *                every second data is generated
+	 *                every 10 seconds data is monitored for the anomalities
+	 */
     class PatientInICU
     {
         private Timer _monitoringTimer, _patientDataGeneratorTimer;
@@ -15,16 +21,23 @@ namespace Icu
         private IGeneratorInterface _dataGenerator;
         private Random _rand = new Random();
 
+		/*
+		 * In the constructor objects of Patient, DataGenerator and Monitoring
+		 * correspondingly begins the data generation(every second) and monitoring(every 10th second)
+		 */
         public PatientInICU()
         {
             var patientId = PatientIdGenerator();
-            var patientName = "Mr. XYZ";
+            var patientName = "Mr.Pushkar";
             var sourcePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName, $"Dataset_{patientId}.txt");
             var patient = new Patient.Patient(patientId, patientName);
             _dataGenerator = new DataGenerator(patient, sourcePath);
             _monitor = new Monitor(patient, sourcePath, new ConsoleAlert());
         }
-
+		/*
+		 * StartMonitoring method basically starts the monitoring on the specified patient
+		 * Timer is used,so that monitoring system is triggered every 10 seconds
+		 */
         public void StartMonitoring()
         {
             Console.WriteLine(Constants.ExitMessage);
@@ -48,15 +61,19 @@ namespace Icu
             _patientDataGeneratorTimer.Dispose();
             Console.WriteLine("Disconnecting Monitoring System");
         }
+		
         private void MonitoringSystemEvent(Object source, ElapsedEventArgs e)
         {
             _monitor.CheckStatus();
         }
-        private void PatientDataGeneratorEvent(Object source, ElapsedEventArgs e)
+      
+		private void PatientDataGeneratorEvent(Object source, ElapsedEventArgs e)
         {
             _dataGenerator.UpdateValues();
         }
-
+		/*
+		 * PatientIdGenerator function generates unique id for the patients in ICU
+		 */
         private string PatientIdGenerator()
         {
 			_rand = new Random();

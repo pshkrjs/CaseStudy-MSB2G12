@@ -5,7 +5,6 @@ using System.Linq;
 using AlertSystem;
 using Newtonsoft.Json;
 using Resources;
-
 namespace MonitoringSystem
 {
     public class Monitor : IMonitor
