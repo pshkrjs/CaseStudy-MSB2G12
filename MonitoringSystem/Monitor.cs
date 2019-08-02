@@ -7,6 +7,9 @@ using Newtonsoft.Json;
 using Resources;
 namespace MonitoringSystem
 {
+	/*
+	 * Monitor Class monitors the Spo2 , PulseRate and Temperature values every 10 seconds for the anomalies  
+	 */
     public class Monitor : IMonitor
     {
         private IAlert _alertChannel;
@@ -19,7 +22,11 @@ namespace MonitoringSystem
             _sourcePath = sourcePath;
             _alertChannel = alertChannel;
         }
-
+		/*
+		 * CheckStatus receives 10 set of values of the past 10 seconds finds the average and triggers alert
+		   if there exist an anomaly
+		 *
+		 */
         public void CheckStatus()
         {
             var patientDetails = ReadPatientDetails();
@@ -62,7 +69,9 @@ namespace MonitoringSystem
         {
             return (avgSpo2 < Constants.Spo2ValidMin || avgSpo2 > Constants.Spo2ValidMax) ? true : false;
         }
-
+		/*
+		 * ReadPatientDetails method reads the values generated in the past 10 seconds into a list
+		 */
         private List<Patient.Patient> ReadPatientDetails()
         {
             List<string> lines = File.ReadAllLines(_sourcePath).Reverse().Take(Constants.MonitoringInterval).ToList();

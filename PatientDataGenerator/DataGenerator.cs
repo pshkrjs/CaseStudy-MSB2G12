@@ -4,7 +4,10 @@ using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
 using Resources;
-
+/*
+ * PatientDataGenerator generates data(temperature,spo2 and pulse rate) every second and writes into a file
+ * so that MonitoringSystem checks the status
+ */
 namespace PatientDataGenerator
 {
     public class DataGenerator : IGeneratorInterface
@@ -19,7 +22,11 @@ namespace PatientDataGenerator
 			var temp = new decimal(_rand.Next(Constants.TemperatureMin, Constants.TemperatureMax) + _rand.NextDouble());
 			return Math.Round(temp, 1);
 		}
-
+		/*
+		 * UpdateValues method writes the generated values into a file
+		 * file size is restricted to 15 lines
+		 * after 15 lines latest entry gets added removing the oldest entry
+		 */
         public void UpdateValues()
         {
             _patient.Spo2 = GenerateSpo2();
