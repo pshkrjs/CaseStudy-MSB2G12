@@ -2,7 +2,11 @@
 {
     public class Constants
     {
-	    public const int NoOfMillisInASecond = 1000;
+        public const string demoPatientId = "ZXREA142";
+        public const string demoPatientName = "Pushkaraj";
+        public const string demosourcePath = "";
+
+        public const int NoOfMillisInASecond = 1000;
 		public const string ExitMessage = "Press any key to exit.";
         public const string MonitoringMessage = "Patient Monitoring has started...";
         public const string PatientDataGeneratorMessage = "Data Generation has started...";
