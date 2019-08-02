@@ -12,28 +12,19 @@ namespace PatientDataGenerator
         private readonly Patient.Patient _patient;
         private Random _rand;
         private readonly string _sourcePath;
-        public int ChangePulse()
-        {
-            return _rand.Next(Constants.PulseRateMin, Constants.PulseRateMax);
 
-        }
 
-        public int ChangeSpo2()
+        public decimal GenerateTemperature()
         {
-            return _rand.Next(Constants.Spo2Min, Constants.Spo2Max);
-        }
+			var temp = new decimal(_rand.Next(Constants.TemperatureMin, Constants.TemperatureMax) + _rand.NextDouble());
+			return Math.Round(temp, 1);
+		}
 
-        public decimal ChangeTemperature()
-        {
-            var temp = new decimal(_rand.Next(Constants.TemperatureMin, Constants.TemperatureMax) + _rand.NextDouble());
-            return Math.Round(temp, 1);
-        }
-        
         public void UpdateValues()
         {
-            _patient.Spo2 = ChangeSpo2();
-            _patient.PulseRate = ChangePulse();
-            _patient.Temperature = ChangeTemperature();
+            _patient.Spo2 = GenerateSpo2();
+            _patient.PulseRate = GeneratePulseRate();
+            _patient.Temperature = GenerateTemperature();
             var lineCount = File.ReadLines(_sourcePath).Count();
             StreamWriter streamWriter;
 
@@ -59,8 +50,18 @@ namespace PatientDataGenerator
             streamWriter.Dispose();
         }
 
+		public int GeneratePulseRate()
+		{
+				return _rand.Next(Constants.PulseRateMin, Constants.PulseRateMax);
 
-        public DataGenerator(Patient.Patient patient, string sourcePath)
+			}
+
+		public int GenerateSpo2()
+		{
+			return _rand.Next(Constants.Spo2Min, Constants.Spo2Max);
+		}
+
+		public DataGenerator(Patient.Patient patient, string sourcePath)
         {
             _rand = new Random();
             _patient = patient;

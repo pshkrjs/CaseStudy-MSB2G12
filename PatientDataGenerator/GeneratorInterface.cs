@@ -8,9 +8,9 @@ namespace PatientDataGenerator
 {
 	public interface IGeneratorInterface
 	{
-		int ChangePulse();
-		int ChangeSpo2();
-		decimal ChangeTemperature();
+		int GeneratePulseRate();
+		int GenerateSpo2();
+		decimal GenerateTemperature();
         void UpdateValues();
     }
 }
