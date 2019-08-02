@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using AlertSystem;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Utils;
@@ -19,14 +18,13 @@ namespace ConsoleAlertTests
         [AssemblyInitialize]
         public static void Initialize(TestContext testContext)
         {
-            _patient = new Patient.Patient(demoPatientId, demoPatientName);
+            _patient = new Patient.Patient(DemoPatientId, DemoPatientName);
             _alertChannel = new ConsoleAlert();
         }
 
         [TestMethod]
         public void AlertTest()
         {
-            var currentConsoleOut = Console.Out;
             _patient.Spo2 = 65;
             _patient.PulseRate = 72;
             _patient.Temperature = 98.6m;
@@ -39,7 +37,7 @@ namespace ConsoleAlertTests
             string expectedConsoleOutput;
             using (var consoleOutput = new ConsoleOutput())
             {
-                Console.WriteLine(AlertPatientDetailFormat, _patient.TimeStamp, _patient.PatientName);
+                Console.WriteLine(AlertPatientDetailFormat, new DateTime(1970,1,1).AddMilliseconds(_patient.TimeStamp), _patient.PatientName);
                 foreach (var anomaly in anomalyList)
                 {
                     Console.WriteLine(AlertPatientAnomalyFormat, anomaly, typeof(Patient.Patient).GetProperty(anomaly).GetValue(_patient));

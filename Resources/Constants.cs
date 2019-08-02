@@ -2,9 +2,9 @@
 {
     public class Constants
     {
-        public const string demoPatientId = "ZXREA142";
-        public const string demoPatientName = "Pushkaraj";
-        public const string demosourcePath = "";
+        public const string DemoPatientId = "ZXREA142";
+        public const string DemoPatientName = "Pushkaraj";
+        public const string DemosourcePath = "";
 
         public const int NoOfMillisInASecond = 1000;
 		public const string ExitMessage = "Press any key to exit.";

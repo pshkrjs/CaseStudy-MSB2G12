@@ -12,9 +12,9 @@ namespace Icu
 	 * PatientInICU class tries to demonstrate a patient in ICU
 	 * for simplicity we have considered::
 	 *                every second data is generated
-	 *                every 10 seconds data is monitored for the anomalities
+	 *                every 10 seconds data is monitored for the anomalies
 	 */
-    class PatientInICU
+    class PatientInIcu
     {
         private Timer _monitoringTimer, _patientDataGeneratorTimer;
         private IMonitor _monitor;
@@ -25,7 +25,7 @@ namespace Icu
 		 * In the constructor objects of Patient, DataGenerator and Monitoring
 		 * correspondingly begins the data generation(every second) and monitoring(every 10th second)
 		 */
-        public PatientInICU()
+        public PatientInIcu()
         {
             var patientId = PatientIdGenerator();
             var patientName = "Mr.Pushkar";
@@ -49,6 +49,7 @@ namespace Icu
 
             Console.WriteLine(Constants.MonitoringMessage);
             Console.WriteLine(Constants.Ranges, Constants.Spo2ValidMin, Constants.Spo2ValidMax, Constants.TemperatureValidMin, Constants.TemperatureValidMax, Constants.PulseRateValidMin, Constants.PulseRateValidMax);
+
 			_monitoringTimer = new Timer(Constants.MonitoringInterval * Constants.NoOfMillisInASecond);
             _monitoringTimer.Elapsed += MonitoringSystemEvent;
             _monitoringTimer.AutoReset = true;

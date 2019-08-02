@@ -57,17 +57,17 @@ namespace MonitoringSystem
 
         private bool CheckTemperature(decimal avgTemperature)
         {
-            return (avgTemperature < Constants.TemperatureValidMin || avgTemperature > Constants.TemperatureValidMax) ? true : false;
+            return (avgTemperature < Constants.TemperatureValidMin || avgTemperature > Constants.TemperatureValidMax);
         }
 
         private bool CheckPulseRate(int avgPulseRate)
         {
-            return (avgPulseRate < Constants.PulseRateValidMin || avgPulseRate > Constants.PulseRateValidMax) ? true : false;
+            return (avgPulseRate < Constants.PulseRateValidMin || avgPulseRate > Constants.PulseRateValidMax);
         }
 
         private bool CheckSpo2(int avgSpo2)
         {
-            return (avgSpo2 < Constants.Spo2ValidMin || avgSpo2 > Constants.Spo2ValidMax) ? true : false;
+            return (avgSpo2 < Constants.Spo2ValidMin || avgSpo2 > Constants.Spo2ValidMax);
         }
 		/*
 		 * ReadPatientDetails method reads the values generated in the past 10 seconds into a list

@@ -1,11 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using PatientDataGenerator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Resources.Constants;
 
 namespace PatientDataGeneratorTests
@@ -19,13 +14,13 @@ namespace PatientDataGeneratorTests
         [AssemblyInitialize]
         public static void TestInitialize(TestContext testContext)
         {
-            _patient = new Patient.Patient(demoPatientId, demoPatientName);
-            _dataGenerator = new DataGenerator(_patient, demosourcePath);
+            _patient = new Patient.Patient(DemoPatientId, DemoPatientName);
+            _dataGenerator = new DataGenerator(_patient, DemosourcePath);
         }
 
         private bool MinMaxBoundary(decimal value, decimal minValue, decimal maxValue)
         {
-            if (value > minValue && value < maxValue)
+            if (value >= minValue && value <= maxValue)
                 return true;
             return false;
         }

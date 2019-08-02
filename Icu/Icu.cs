@@ -1,9 +1,4 @@
-﻿using System;
-using System.Timers;
-using MonitoringSystem;
-using PatientDataGenerator;
-
-namespace Icu
+﻿namespace Icu
 {
 	/*
 	 * Icu is basically the class where the execution of the project start
@@ -16,7 +11,7 @@ namespace Icu
 		 */
         public static void Main()
         {
-            var patientInIcu = new PatientInICU();
+            var patientInIcu = new PatientInIcu();
             patientInIcu.StartMonitoring();
         }
     }

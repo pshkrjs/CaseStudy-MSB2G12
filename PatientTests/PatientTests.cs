@@ -14,8 +14,8 @@ namespace PatientTests
         [AssemblyInitialize]
         public static void TestInitialize(TestContext testContext)
         {
-            _patient = new Patient.Patient(demoPatientId, demoPatientName);
-            _dataGenerator = new DataGenerator(_patient, demosourcePath);
+            _patient = new Patient.Patient(DemoPatientId, DemoPatientName);
+            _dataGenerator = new DataGenerator(_patient, DemosourcePath);
         }
 
         [TestMethod]
