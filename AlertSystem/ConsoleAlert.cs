@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Resources;
+using static Resources.Constants;
 /*
  * ConsoleAlert generates suitable Alerts corresponding to the anomalies found in the Patient
  */
@@ -14,10 +14,10 @@ namespace AlertSystem
 		 */
 	    public void Alert(Patient.Patient patient, List<string> anomalyList)
         {
-            Console.WriteLine(Constants.AlertPatientDetailFormat, new DateTime(1970,1,1).AddMilliseconds(patient.TimeStamp), patient.PatientName);
+            Console.WriteLine(AlertPatientDetailFormat, new DateTime(1970,1,1).AddMilliseconds(patient.TimeStamp), patient.PatientName);
             foreach (var anomaly in anomalyList)
             {
-                Console.WriteLine(Constants.AlertPatientAnomalyFormat, anomaly, typeof(Patient.Patient).GetProperty(anomaly).GetValue(patient));
+                Console.WriteLine(AlertPatientAnomalyFormat, anomaly, typeof(Patient.Patient).GetProperty(anomaly).GetValue(patient));
             }
         }
     }

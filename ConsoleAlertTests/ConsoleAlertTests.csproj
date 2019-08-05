@@ -69,7 +69,7 @@
       <Name>Patient</Name>
     </ProjectReference>
     <ProjectReference Include="..\Resources\Resources.csproj">
-      <Project>{30B7F0AC-3ED2-4985-86E7-53322001AFE5}</Project>
+      <Project>{30b7f0ac-3ed2-4985-86e7-53322001afe5}</Project>
       <Name>Resources</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.csproj">

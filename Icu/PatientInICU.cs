@@ -4,7 +4,7 @@ using MonitoringSystem;
 using System.Timers;
 using PatientDataGenerator;
 using AlertSystem;
-using Resources;
+using static Resources.Constants;
 
 namespace Icu
 {
@@ -40,17 +40,17 @@ namespace Icu
 		 */
         public void StartMonitoring()
         {
-            Console.WriteLine(Constants.ExitMessage);
-            Console.WriteLine(Constants.PatientDataGeneratorMessage);
-            _patientDataGeneratorTimer = new Timer(Constants.DataGeneratorInterval * Constants.NoOfMillisInASecond);
+            Console.WriteLine(ExitMessage);
+            Console.WriteLine(PatientDataGeneratorMessage);
+            _patientDataGeneratorTimer = new Timer(DataGeneratorInterval * NoOfMillisInASecond);
             _patientDataGeneratorTimer.Elapsed += PatientDataGeneratorEvent;
             _patientDataGeneratorTimer.AutoReset = true;
             _patientDataGeneratorTimer.Enabled = true;
 
-            Console.WriteLine(Constants.MonitoringMessage);
-            Console.WriteLine(Constants.Ranges, Constants.Spo2ValidMin, Constants.Spo2ValidMax, Constants.TemperatureValidMin, Constants.TemperatureValidMax, Constants.PulseRateValidMin, Constants.PulseRateValidMax);
+            Console.WriteLine(MonitoringMessage);
+            Console.WriteLine(Ranges, Spo2ValidMin, Spo2ValidMax, TemperatureValidMin, TemperatureValidMax, PulseRateValidMin, PulseRateValidMax);
 
-			_monitoringTimer = new Timer(Constants.MonitoringInterval * Constants.NoOfMillisInASecond);
+			_monitoringTimer = new Timer(MonitoringInterval * NoOfMillisInASecond);
             _monitoringTimer.Elapsed += MonitoringSystemEvent;
             _monitoringTimer.AutoReset = true;
             _monitoringTimer.Enabled = true;
@@ -70,7 +70,7 @@ namespace Icu
       
 		private void PatientDataGeneratorEvent(Object source, ElapsedEventArgs e)
         {
-            _dataGenerator.UpdateValues();
+            _dataGenerator.GenerateValues();
         }
 		/*
 		 * PatientIdGenerator function generates unique id for the patients in ICU
@@ -79,20 +79,20 @@ namespace Icu
         {
 			_rand = new Random();
 	        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            var stringChars = new char[5];
+            var randString = new char[5];
 
-            for (int i = 0; i < stringChars.Length; i++)
+            for (int i = 0; i < randString.Length; i++)
             {
-                stringChars[i] = chars[_rand.Next(chars.Length)];
+                randString[i] = chars[_rand.Next(chars.Length)];
             }
 
             var randInt = _rand.Next(100, 999);
-	        var patID = new string(stringChars) + randInt.ToString();
+	        var patId = new string(randString) + randInt.ToString();
 
 			using (File.Create(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
-				$"Dataset_{patID}.txt"))) { }
+				$"Dataset_{patId}.txt"))) { }
 
-			return patID;
+			return patId;
         }
     }
 }

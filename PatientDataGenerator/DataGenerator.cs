@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using Resources;
+using static Resources.Constants;
 /*
  * PatientDataGenerator generates data(temperature,spo2 and pulse rate) every second and writes into a file
  * so that MonitoringSystem checks the status
@@ -19,15 +19,15 @@ namespace PatientDataGenerator
 
         public decimal GenerateTemperature()
         {
-			var temp = new decimal(_rand.Next(Constants.TemperatureMin, Constants.TemperatureMax) + _rand.NextDouble());
+			var temp = new decimal(_rand.Next(TemperatureMin, TemperatureMax) + _rand.NextDouble());
 			return Math.Round(temp, 1);
 		}
 		/*
-		 * UpdateValues method writes the generated values into a file
+		 * GenerateValues method writes the generated values into a file
 		 * file size is restricted to 15 lines
 		 * after 15 lines latest entry gets added removing the oldest entry
 		 */
-        public void UpdateValues()
+        public void GenerateValues()
         {
             _patient.Spo2 = GenerateSpo2();
             _patient.PulseRate = GeneratePulseRate();
@@ -35,7 +35,7 @@ namespace PatientDataGenerator
             var lineCount = File.ReadLines(_sourcePath).Count();
             StreamWriter streamWriter;
 
-            if (lineCount < Constants.NumberOfPatientLogEntries)
+            if (lineCount < NumberOfPatientLogEntries)
             {
                 streamWriter = new StreamWriter(_sourcePath, true);
                 streamWriter.WriteLine(JsonConvert.SerializeObject(_patient));
@@ -59,13 +59,13 @@ namespace PatientDataGenerator
 
 		public int GeneratePulseRate()
 		{
-				return _rand.Next(Constants.PulseRateMin, Constants.PulseRateMax);
+				return _rand.Next(PulseRateMin, PulseRateMax);
 
 			}
 
 		public int GenerateSpo2()
 		{
-			return _rand.Next(Constants.Spo2Min, Constants.Spo2Max);
+			return _rand.Next(Spo2Min, Spo2Max);
 		}
 
 		public DataGenerator(Patient.Patient patient, string sourcePath)

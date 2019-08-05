@@ -5,6 +5,6 @@
 		int GeneratePulseRate();
 		int GenerateSpo2();
 		decimal GenerateTemperature();
-        void UpdateValues();
+        void GenerateValues();
     }
 }

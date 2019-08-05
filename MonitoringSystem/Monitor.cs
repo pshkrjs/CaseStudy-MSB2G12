@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using AlertSystem;
 using Newtonsoft.Json;
-using Resources;
+using static Resources.Constants;
 namespace MonitoringSystem
 {
 	/*
@@ -30,6 +30,12 @@ namespace MonitoringSystem
         public void CheckStatus()
         {
             var patientDetails = ReadPatientDetails();
+            var anomalyList = GetAnomalyList(patientDetails);
+            Alert(anomalyList);
+        }
+
+        private List<string> GetAnomalyList(List<Patient.Patient> patientDetails)
+        {
             int avgSpo2 = 0, avgPulseRate = 0;
             decimal avgTemperature = 0.0m;
             foreach (var entry in patientDetails)
@@ -37,45 +43,44 @@ namespace MonitoringSystem
                 avgSpo2 += entry.Spo2;
                 avgPulseRate += entry.PulseRate;
                 avgTemperature += entry.Temperature;
-
             }
 
-            avgSpo2 /= Constants.MonitoringInterval;
-            avgPulseRate /= Constants.MonitoringInterval;
-            avgTemperature /= Constants.MonitoringInterval;
+            avgSpo2 /= MonitoringInterval;
+            avgPulseRate /= MonitoringInterval;
+            avgTemperature /= MonitoringInterval;
             _patient.Spo2 = avgSpo2;
             _patient.PulseRate = avgPulseRate;
             _patient.Temperature = avgTemperature;
-            _patient.TimeStamp = (long)(DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
+            _patient.TimeStamp = (long) (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
             var anomalyList = new List<string>();
 
             if (CheckSpo2(avgSpo2)) anomalyList.Add("Spo2");
             if (CheckPulseRate(avgSpo2)) anomalyList.Add("PulseRate");
             if (CheckTemperature(avgSpo2)) anomalyList.Add("Temperature");
-            Alert(anomalyList);
+            return anomalyList;
         }
 
         private bool CheckTemperature(decimal avgTemperature)
         {
-            return (avgTemperature < Constants.TemperatureValidMin || avgTemperature > Constants.TemperatureValidMax);
+            return (avgTemperature < TemperatureValidMin || avgTemperature > TemperatureValidMax);
         }
 
         private bool CheckPulseRate(int avgPulseRate)
         {
-            return (avgPulseRate < Constants.PulseRateValidMin || avgPulseRate > Constants.PulseRateValidMax);
+            return (avgPulseRate < PulseRateValidMin || avgPulseRate > PulseRateValidMax);
         }
 
         private bool CheckSpo2(int avgSpo2)
         {
-            return (avgSpo2 < Constants.Spo2ValidMin || avgSpo2 > Constants.Spo2ValidMax);
+            return (avgSpo2 < Spo2ValidMin || avgSpo2 > Spo2ValidMax);
         }
 		/*
 		 * ReadPatientDetails method reads the values generated in the past 10 seconds into a list
 		 */
         private List<Patient.Patient> ReadPatientDetails()
         {
-            List<string> lines = File.ReadAllLines(_sourcePath).Reverse().Take(Constants.MonitoringInterval).ToList();
-            List<Patient.Patient> patientDetails = new List<Patient.Patient>(Constants.MonitoringInterval);
+            List<string> lines = File.ReadAllLines(_sourcePath).Reverse().Take(MonitoringInterval).ToList();
+            List<Patient.Patient> patientDetails = new List<Patient.Patient>(MonitoringInterval);
             foreach (var entry in lines)
             {
                 patientDetails.Add(JsonConvert.DeserializeObject<Patient.Patient>(entry));
