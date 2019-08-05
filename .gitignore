@@ -1,4 +1,4 @@
 .vs
-AlertSystem/bin/
-AlertSystem/obj/
-
+*/bin/
+*/obj/
+Dataset_*

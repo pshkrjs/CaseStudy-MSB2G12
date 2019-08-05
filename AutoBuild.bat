@@ -4,7 +4,7 @@ REM Builds the solution
 %WINDIR%\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe .\CaseStudy.sln
 
 REM Runs the console application
-".\AlertSystem\bin\Debug\AlertSystem.exe"
+".\Icu\bin\Debug\Icu.exe"
 
 
 REM Checks pass-fail status
